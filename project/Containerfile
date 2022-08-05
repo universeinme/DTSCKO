@@ -1,16 +1,19 @@
-FROM rhel
+FROM ubi8/ubi:8.3
 
 # file author / maintainer
 
 MAINTAINER "Eko Priambodo" "universeinm@gmail.com"
 
 # update OS
+# delete yum update, app : openssh-client
+# telnet
+RUN yum install -y sudo \
 
-RUN yum -y update && \
+	unzip \
 
-yum -y install sudo openssh-clients telnet unzip java-1.8.0-openjdk-devel && \
+	--setopt=tsflags=nodocs java-1.8.0-openjdk-devel && \
 
-yum clean all
+	yum clean all -y
 
 # enabling sudo group
 
