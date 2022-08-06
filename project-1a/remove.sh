@@ -1,4 +1,4 @@
 # Menghapus image
 
 #!/bin/sh
-sudo podman rm -f jboss-eap
+sudo podman rmi -f acme/jboss-eap
