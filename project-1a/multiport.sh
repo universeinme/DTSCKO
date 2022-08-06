@@ -2,7 +2,7 @@
 
 #!/bin/sh
 
-sudo podman run --name=jboss-eap -d -p \
+sudo podman run --name=acme/jboss-eap -d -p \
 
 hostip1:hostport1:containerport1 \
 

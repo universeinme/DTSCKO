@@ -2,4 +2,4 @@
 
 #!/bin/sh
 
-sudo podman logs --tail=10 jboss-eap
+sudo podman logs --tail=10 acme/jboss-eap

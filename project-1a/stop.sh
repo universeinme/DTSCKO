@@ -1,4 +1,4 @@
 # Script untuk stop container yg sedang berjalan
 
 #!/bin/sh
-sudo podman stop jboss-eap
+sudo podman stop -f acme/jboss-eap
