@@ -65,7 +65,7 @@ ENTRYPOINT $JBOSS_HOME/bin/standalone.sh -c standalone-full-ha.xml
 
 # deploy app
 
-ADD myapp.war "$JBOSS_HOME/standalone/deployments/"
+ADD helloworld.war "$JBOSS_HOME/standalone/deployments/"
 
 USER jboss
 
