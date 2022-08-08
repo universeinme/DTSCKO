@@ -52,7 +52,7 @@ III. Publish jboss-eap:custom ke public registry
 
 - login ke registry
 
-	'sudo podman login registry.com`
+	`sudo podman login registry.com`
 
 - buat repo baru di registry ( nama repo harus sama dengan nama tag )
 
@@ -65,11 +65,12 @@ IV. Backup / Restore ke tar file
 
 - Backup
 
+
 	`sudo podman -o jboss-eap-custom.tar acme/jboss-eap:custom` 
 
 - Restore
 
-	'sudo podman load -i jboss-eap-custom.tar`
+	`sudo podman load -i jboss-eap-custom.tar`
 
 
 
