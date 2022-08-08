@@ -44,16 +44,30 @@ I. Build image jboss-eap-6.4.0
 
 	 `Buka Browser, kemudian masukan alamat 127.0.0.1:8080/`
 
-II. Re-tag image jboss-eap
+II. Re-tag image jboss-eap:latest ke jboss-eap:custom
 
-- jboss-eap:custom
-
-- jboss-eap:latest
+	`sudo podman tag acme/jboss-eap acme/jboss-eap:custom`
 
 III. Publish jboss-eap:custom ke public registry
+
+- login ke registry
+
+	'sudo podman login registry.com`
+
+- buat repo baru di registry ( nama repo harus sama dengan nama tag )
+
+- publish ke registry
+
+
+	`sudo podman tag acme/jboss-eap:custom quay.io/nama_user_di_registry/acme/jaboss-eap:custom`
 
 IV. Backup / Restore ke tar file
 
 - Backup
 
+	`sudo podman -o jboss-eap-custom.tar acme/jboss-eap:custom` 
+
 - Restore
+
+	'sudo podman load -i jboss-eap-custom.tar`
+
