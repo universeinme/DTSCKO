@@ -44,11 +44,46 @@ I. Build image jboss-eap-6.4.0
 
 	 `Buka Browser, kemudian masukan alamat 127.0.0.1:8080/`
 
-II. Re-tag image jboss-eap:latest ke jboss-eap:custom
+II. Membuat Script manage container
+
+- Stop dan Remove acme/jboss-eap
+
+```
+#!/bin/sh
+sudo podman stop -f acme/jboss-eap
+sudo podman rmi -f acme/jboss-eap
+```
+
+- Publish Multi Custom Port
+
+```
+#!/bin/sh
+
+sudo podman run --name=acme/jboss-eap -d \
+
+-p hostip1:hostport1:containerport1 \
+
+-p hostip2:hostport2:containerport2 \
+
+-p hostip3:hostport3:containerport3 \
+
+acme/jboss-eap
+```
+
+- Generate 10 log terakhir
+
+```
+#!/bin/sh
+
+sudo podman logs --tail=10 acme/jboss-eap
+```
+
+
+III. Re-tag image jboss-eap:latest ke jboss-eap:custom
 
 	`sudo podman tag acme/jboss-eap acme/jboss-eap:custom`
 
-III. Publish jboss-eap:custom ke public registry
+IV. Publish jboss-eap:custom ke public registry
 
 - login ke registry
 
