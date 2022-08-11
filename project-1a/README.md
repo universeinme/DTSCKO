@@ -10,7 +10,7 @@ II. Membuat Script manage container
 ```
 #!/bin/sh
 sudo podman stop -f acme/jboss-eap
- sudo podman rmi -f acme/jboss-eap
+sudo podman rmi -f acme/jboss-eap
 ```
 
 - Publish Multi Custom Port
