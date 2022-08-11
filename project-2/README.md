@@ -3,7 +3,7 @@
 
 ### Redhat Containers Engineer Specialist
 
-**III. Membuat shell script untuk start manual container mariadb dalah sebuah pod**
+**III. Membuat shell script untuk start manual container mariadb dalam sebuah pod**
 
 - Membuat folder untuk persistent volume
 - Mounting Volume ke dalam container
