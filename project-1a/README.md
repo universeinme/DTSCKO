@@ -7,10 +7,11 @@ II. Membuat Script manage container
 
 - Stop dan Remove acme/jboss-eap
 
-    ```
-	#!/bin/sh
-    sudo podman stop -f acme/jboss-eap
-    sudo podman rmi -f acme/jboss-eap```
+```
+#!/bin/sh
+sudo podman stop -f acme/jboss-eap
+ sudo podman rmi -f acme/jboss-eap
+```
 
 - Publish Multi Custom Port
 
