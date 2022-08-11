@@ -57,15 +57,19 @@ sudo podman rmi -f acme/jboss-eap
 - Publish Multi Custom Port
 
 ```
+# Multi host dan port container
+
 #!/bin/sh
 
-sudo podman run --name=acme/jboss-eap -d \
+echo -n "This will be run on ports : 8080, 9990 and 9999"
 
--p hostip1:hostport1:containerport1 \
+sudo podman run --name=acme/jboss-eap \
 
--p hostip2:hostport2:containerport2 \
+-d -p 127.0.0.1:8080:8080 \
 
--p hostip3:hostport3:containerport3 \
+-p 127.0.0.1:9990:9990 \
+
+-p 127.0.0.1:9999:9999 \
 
 acme/jboss-eap
 ```
@@ -101,7 +105,7 @@ IV. Backup / Restore ke tar file
 - Backup
 
 
-	`sudo podman -o jboss-eap-custom.tar acme/jboss-eap:custom` 
+	`sudo podman load -o jboss-eap-custom.tar acme/jboss-eap:custom` 
 
 - Restore
 
