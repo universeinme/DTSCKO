@@ -34,7 +34,7 @@ I. Build image jboss-eap-6.4.0
 - Run Images
 
 
-	`sudo docker run -it acme/jboss-eap`
+	`sudo podman run -it acme/jboss-eap`
 
 
 - Check The App
