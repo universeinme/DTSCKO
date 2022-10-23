@@ -46,12 +46,12 @@ I. Build image jboss-eap-6.4.0
 
 II. Membuat Script manage container
 
-- Stop dan Remove acme/jboss-eap
+- Stop dan Remove acme/jboss-eap container
 
 ```
 #!/bin/sh
 sudo podman stop -a
-sudo podman rmi acme/jboss-eap
+sudo podman rm -f acme/jboss-eap
 ```
 
 - Publish Multi Custom Port
