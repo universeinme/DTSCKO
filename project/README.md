@@ -10,7 +10,7 @@ I. Build image jboss-eap-6.4.0
 **Image harus jadi dengan nama acme/jboss-eap**
 
 
-- podman login
+- podman login registry.redhat.io
 
 
 - bikin containerfile
@@ -34,7 +34,7 @@ I. Build image jboss-eap-6.4.0
 - Run Images
 
 
-	`sudo podman run -it acme/jboss-eap`
+	`sudo podman run -it --rm -p 8080:8080 -p 9990:9990 -p 9999:9999 --name acme/jboss-eap`
 
 
 - Check The App
@@ -50,8 +50,8 @@ II. Membuat Script manage container
 
 ```
 #!/bin/sh
-sudo podman stop -f acme/jboss-eap
-sudo podman rmi -f acme/jboss-eap
+sudo podman stop -a
+sudo podman rmi acme/jboss-eap
 ```
 
 - Publish Multi Custom Port
@@ -65,13 +65,13 @@ echo -n "This will be run on ports : 8080, 9990 and 9999"
 
 sudo podman run --name=acme/jboss-eap \
 
--d -p 127.0.0.1:8080:8080 \
+-d -p 8080:8080 \
 
--p 127.0.0.1:9990:9990 \
+-p 9990:9990 \
 
--p 127.0.0.1:9999:9999 \
+-p 9999:9999 \
 
-acme/jboss-eap
+--name jboss acme/jboss-eap
 ```
 
 - Generate 10 log terakhir
