@@ -93,12 +93,15 @@ IV. Publish jboss-eap:custom ke public registry
 
 	`sudo podman login registry.com`
 
-- buat repo baru di registry ( nama repo harus sama dengan nama tag )
+- buat repo baru di registry (quay.io) ( nama repo harus sama dengan nama tag )
 
-- publish ke registry
-
+- Membuat tag baru sesuai dengan repo registry
 
 	`sudo podman tag acme/jboss-eap:custom quay.io/nama_user_di_registry/acme/jaboss-eap:custom`
+	
+- publish ke registry
+
+	`sudo podman push quay.io/nama_user_di_registry/acme/jaboss-eap:custom`
 
 IV. Backup / Restore ke tar file
 
